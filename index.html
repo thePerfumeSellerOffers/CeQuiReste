@@ -33,7 +33,7 @@
       width: 300px;
       height: auto;
       display: block;
-      margin: 0 auto 8px auto; 
+      margin: 10px auto 8px auto; 
     }
 
     .poem {
@@ -46,18 +46,21 @@
       padding: 40px;
     }
 
-    .disabled-button {
-      display: inline-block;
-      padding: 14px 20px;
-      border-radius: 10px;
-      border: 1px solid #000;
-      font-size: 14px;
-      color: #000;
-      background: transparent;
-      opacity: 0.5;
-      cursor: not-allowed;
-      user-select: none;
-    }
+.disabled-button {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 2px solid #000; /* slightly stronger */
+  font-size: 14px;
+  font-weight: 600; /* bolder */
+  text-transform: uppercase; /* ALL CAPS */
+  letter-spacing: 1px; /* gives it that “label/button” feel */
+  color: #000;
+  background: transparent;
+  opacity: 0.6;
+  cursor: not-allowed;
+  user-select: none;
+}
   </style>
 </head>
 
