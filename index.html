@@ -8,16 +8,19 @@
   />
   <!-- <title>The Perfume Seller</title> -->
 
+  <!-- Open Sans font -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
-      background: #EEFF00; /* <-- your color */
-      font-family: Arial, sans-serif;
+      background: #EEFF00;
+      font-family: 'Open Sans', sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      color: #111;
+      color: #000;
       text-align: center;
     }
 
@@ -30,23 +33,31 @@
       width: 200px;
       height: 200px;
       object-fit: cover;
-      margin: 0 auto 24px auto;
+      margin: 0 auto 28px auto;
       display: block;
-      border-radius: 12px;
-      background: #ddd;
+      border-radius: 0; /* sharper feel */
     }
 
     .poem {
       font-size: 16px;
-      line-height: 1.6;
-      margin-bottom: 32px;
+      line-height: 1.7;
+      margin-bottom: 40px;
       white-space: pre-line;
+      font-weight: 300;
     }
 
-    .footer {
+    /* Disabled button style */
+    .disabled-button {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 1px solid #000;
       font-size: 14px;
-      letter-spacing: 0.05em;
-      color: #333;
+      color: #000;
+      background: transparent;
+      opacity: 0.5;
+      cursor: not-allowed;
+      user-select: none;
     }
   </style>
 </head>
@@ -54,77 +65,17 @@
 <body>
   <main class="container">
     
-    <img src="logo.png" alt="Perfume" class="image" />
+    <img src="perfume.jpg" alt="Perfume" class="image" />
 
     <div class="poem">
-There was no silence
-only a rearrangement of bodies
+the perfume seller offers  
+ce qui reste  
 
-the ground kept everything
-without asking
-
-no one counted
-no one named
-
-only what remained
-could be touched
-
-I arrived after
-
-not as witness
-not as mourner
-
-but as one who works
-
-the air was still carrying them
-without form
-without permission
-
-I collected what did not leave
-
-not the bodies
-no
-
-what stayed beneath them
-what resisted disappearance
-what clung to the place
-like a second truth
-
-it had no owner
-no history that could be spoken
-
-it was already reduced
-
-I learned how to separate it
-slowly
-without disturbing the surface
-
-as if nothing had happened
-
-this is how it becomes perfume
-
-not memory
-not death
-
-but something that continues
-on other skin
-
-you take it
-
-you carry it
-
-you say nothing
-
-and the place
-
-the place appears clean
-
-but it is not
-
-it circulates
+a trace of something  
+that no longer belongs to anyone
     </div>
 
-    <div class="footer">
+    <div class="disabled-button">
       Sales start on April 10th
     </div>
 
