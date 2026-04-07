@@ -31,11 +31,10 @@
 
     .image {
       width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin: 0 auto 28px auto;
+      height: auto; /* keep natural ratio */
       display: block;
-      border-radius: 0; /* sharper feel */
+      margin: 0 auto 12px auto; /* reduced spacing */
+      border-radius: 0;
     }
 
     .poem {
@@ -43,10 +42,9 @@
       line-height: 1.7;
       margin-bottom: 40px;
       white-space: pre-line;
-      font-weight: bold;
+      font-weight: 300;
     }
 
-    /* Disabled button style */
     .disabled-button {
       display: inline-block;
       padding: 14px 20px;
