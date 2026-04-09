@@ -10,7 +10,6 @@
 <style>
 :root {
   --bg: #EEFF00;
-  --text: #000;
 }
 
 * { box-sizing: border-box; }
@@ -65,7 +64,7 @@ body {
   padding: 3px 5px;
 }
 
-.logo { width: 120px; }
+.logo { width: 160px; }
 
 /* SCROLL */
 
@@ -76,16 +75,17 @@ body {
   scroll-snap-type: x mandatory;
 }
 
-/* PRODUCT TILE */
+/* PRODUCT */
 
 .product {
+  position: relative;
   flex: 0 0 75%;
   max-width: 75%;
   scroll-snap-align: start;
   cursor: pointer;
 }
 
-/* IMAGE WITH WHITE BORDER */
+/* IMAGE */
 
 .product-image {
   width: 100%;
@@ -94,12 +94,26 @@ body {
   border: 6px solid white;
 }
 
-/* TITLE BELOW IMAGE */
+/* TITLE ON IMAGE */
 
 .product-title {
-  margin-top: 6px;
-  font-size: 14px;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  color: white;
+  font-size: 16px;
   font-weight: 700;
+  z-index: 1;
+}
+
+/* DARK GRADIENT FOR READABILITY */
+
+.product::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
 }
 
 /* MODAL */
