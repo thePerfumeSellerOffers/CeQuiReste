@@ -2,301 +2,145 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-  <title>Limited Edition Perfume</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>The Perfume Seller</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nosifer&display=swap" rel="stylesheet">
 
   <style>
-    :root {
-      --bg: #EEFF00;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
     body {
-      background: var(--bg);
-      font-family: 'Open Sans', sans-serif;
-      color: #000;
-    }
-
-    .page {
-      min-height: 100dvh;
-      display: flex;
-      flex-direction: column;
-      padding: 14px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 12px;
-      flex-shrink: 0;
-    }
-
-    .header-left {
-      max-width: 60%;
-    }
-
-    .intro-title {
-      margin: 0 0 6px;
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      line-height: 1.2;
-    }
-
-    .intro-text {
       margin: 0;
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .contact-buttons {
-      margin-top: 12px;
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .nav-link {
-      font-size: 9px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: #000;
-      text-decoration: none;
-      border: 1px solid #000;
-      padding: 3px 5px;
-    }
-
-    .logo {
-      width: 160px;
-      height: auto;
-      flex-shrink: 0;
-    }
-
-    .scroll-wrap {
-      flex: 1;
-      min-height: 0;
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      align-items: stretch;
-      padding-bottom: 2px;
-    }
-
-    .scroll-wrap::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .scroll-wrap::-webkit-scrollbar-thumb {
-      background: rgba(0, 0, 0, 0.35);
-    }
-
-    .product {
-      position: relative;
-      flex: 0 0 75%;
-      max-width: 75%;
-      height: 100%;
-      min-height: 100%;
-      scroll-snap-align: start;
-      cursor: pointer;
-    }
-
-    .product-image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border: 6px solid white;
-      display: block;
-    }
-
-    .product-title {
-      position: absolute;
-      left: 14px;
-      right: 14px;
-      bottom: 14px;
-      color: white;
-      font-size: 16px;
-      font-weight: 700;
-      line-height: 1.2;
-      text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
-    }
-
-    .modal {
-      position: fixed;
-      inset: 0;
       background: #EEFF00;
-      display: none;
-      z-index: 10;
-      overflow-y: auto;
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #000;
+      text-align: center;
     }
 
-    .modal.active {
-      display: block;
-    }
-
-    .close {
-      position: fixed;
-      top: 10px;
-      right: 14px;
-      font-size: 20px;
-      line-height: 1;
-      cursor: pointer;
-      z-index: 11;
-    }
-
-    .modal-content {
-      padding: 18px 18px 28px;
+    .container {
       max-width: 420px;
-      margin: 0 auto;
+      padding: 24px;
     }
 
-    .modal img {
-      width: 100%;
-      border: 6px solid white;
-      margin-bottom: 18px;
+    .image {
+      width: 300px;
+      height: auto;
       display: block;
+      margin: 10px auto 8px auto; 
     }
 
-    .modal-title {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 12px;
-    }
-
-    .modal-text {
-      font-size: 14px;
-      line-height: 1.7;
-      margin-bottom: 20px;
-      max-width: 36ch;
-    }
-
-    .modal-meta-group {
-      margin-top: 16px;
-      max-width: 36ch;
-    }
-
-    .modal-meta-main {
-      font-size: 13px;
-      line-height: 1.5;
-      margin-bottom: 8px;
-    }
-
-    .modal-meta-sub {
+    .poem {
+      font-family: 'Nosifer', cursive;
       font-size: 12px;
       line-height: 1.5;
-      opacity: 0.8;
+      margin-bottom: 40px;
+      white-space: pre-line;
+      letter-spacing: 1px;
+      padding: 40px;
     }
+
+.disabled-button {
+  display: inline-block;
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 2px solid #000; /* slightly stronger */
+  font-size: 14px;
+  font-weight: 600; /* bolder */
+  text-transform: uppercase; /* ALL CAPS */
+  letter-spacing: 1px; /* gives it that “label/button” feel */
+  color: #000;
+  background: transparent;
+  opacity: 0.6;
+  cursor: not-allowed;
+  user-select: none;
+}
   </style>
 </head>
+
 <body>
-  <main class="page">
-    <header class="header">
-      <div class="header-left">
-        <h1 class="intro-title">Limited Edition Perfumes</h1>
-        <p class="intro-text">
-          Each perfume is sold with an accompanying image print.<br>
-          For acquisition inquiries:
-        </p>
+  <main class="container">
+    
+    <img src="logo.png" alt="Perfume" class="image" />
 
-        <div class="contact-buttons">
-          <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
-          <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </div>
-      </div>
+    <div class="poem">
+There was no silence
+only a rearrangement of bodies
 
-      <img src="logo.png" alt="Logo" class="logo">
-    </header>
+the ground kept everything
+without asking
 
-    <section class="scroll-wrap">
-      <div class="product" onclick="openModal(0)">
-        <img src="perfume-1.JPG" alt="Calcined Bone Dust" class="product-image">
-        <div class="product-title">Calcined Bone Dust</div>
-      </div>
+no one counted
+no one named
 
-      <div class="product" onclick="openModal(1)">
-        <img src="perfume-2.JPG" alt="Marrow Residue" class="product-image">
-        <div class="product-title">Marrow Residue</div>
-      </div>
+only what remained
+could be touched
 
-      <div class="product" onclick="openModal(2)">
-        <img src="perfume-3.JPG" alt="Ossified Oil" class="product-image">
-        <div class="product-title">Ossified Oil</div>
-      </div>
+I arrived after
 
-      <div class="product" onclick="openModal(3)">
-        <img src="perfume-4.JPG" alt="Ash of Structure" class="product-image">
-        <div class="product-title">Ash of Structure</div>
-      </div>
-    </section>
+not as witness
+not as mourner
+
+but as one who works
+
+the air was still carrying them
+without form
+without permission
+
+I collected what did not leave
+
+not the bodies
+no
+
+what stayed beneath them
+what resisted disappearance
+what clung to the place
+like a second truth
+
+it had no owner
+no history that could be spoken
+
+it was already reduced
+
+I learned how to separate it
+slowly
+without disturbing the surface
+
+as if nothing had happened
+
+this is how it becomes perfume
+
+not memory
+not death
+
+but something that continues
+on other skin
+
+you take it
+
+you carry it
+
+you say nothing
+
+and the place
+
+the place appears clean
+
+but it is not
+
+it circulates
+    </div>
+
+    <div class="disabled-button">
+      Sales start on April 10th
+    </div>
+
   </main>
-
-  <div class="modal" id="modal">
-    <div class="close" onclick="closeModal()">✕</div>
-    <div class="modal-content" id="modalContent"></div>
-  </div>
-
-  <script>
-    const data = [
-      {
-        title: "Calcined Bone Dust",
-        img: "perfume-1.JPG",
-        text: "Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter."
-      },
-      {
-        title: "Marrow Residue",
-        img: "perfume-2.JPG",
-        text: "Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate."
-      },
-      {
-        title: "Ossified Oil",
-        img: "perfume-3.JPG",
-        text: "An imagined oil derived from bone structure. Thick, slow, slightly metallic—between mineral and body."
-      },
-      {
-        title: "Ash of Structure",
-        img: "perfume-4.JPG",
-        text: "What is left after the last form collapses. Light, airborne, almost absent yet persistent."
-      }
-    ];
-
-    function openModal(i) {
-      const item = data[i];
-      const modal = document.getElementById("modal");
-      const content = document.getElementById("modalContent");
-
-      content.innerHTML = `
-        <img src="${item.img}" alt="${item.title}">
-        <div class="modal-title">${item.title}</div>
-        <div class="modal-text">${item.text}</div>
-        <div class="modal-meta-group">
-          <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
-          <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
-        </div>
-      `;
-
-      modal.classList.add("active");
-    }
-
-    function closeModal() {
-      document.getElementById("modal").classList.remove("active");
-    }
-  </script>
 </body>
 </html>
