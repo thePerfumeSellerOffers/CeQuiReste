@@ -35,40 +35,48 @@
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center; /* key fix */
-  margin-bottom: 16px;
+  align-items: center;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #000; /* important */
 }
 
-/* LOGO — smaller + calmer */
-.logo {
-  width: 120px;
-  height: auto;
+/* LEFT: title */
+.nav-left {
+  max-width: 55%;
 }
 
-/* RIGHT SIDE — now horizontal, not stacked */
+.nav-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+}
+
+/* RIGHT: logo + instagram */
 .nav-right {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
 }
 
-/* NAME */
-.brand {
-  font-family: 'Nosifer', cursive;
-  font-size: 14px;
-  line-height: 1;
+/* LOGO */
+.logo {
+  width: 90px; /* smaller → cleaner */
+  height: auto;
 }
 
 /* INSTAGRAM */
 .nav-link {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #000;
   text-decoration: none;
   border: 1px solid #000;
-  padding: 4px 6px;
+  padding: 3px 5px;
 }
 
     .intro {
@@ -183,10 +191,12 @@
 <body>
   <main class="page">
   <header class="navbar">
-  <img src="logo.png" alt="Logo" class="logo" />
+  <div class="nav-left">
+    <span class="nav-title">Limited Edition Perfumes</span>
+  </div>
 
   <div class="nav-right">
-    <!-- <span class="brand">Hamid Shams</span> -->
+    <img src="logo.png" alt="Logo" class="logo" />
     <a
       href="https://www.instagram.com/__hamidshams__/"
       target="_blank"
