@@ -32,44 +32,43 @@
       padding: 14px 14px 24px;
     }
 
-    .navbar {
+.navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 18px;
+  align-items: center; /* key fix */
+  margin-bottom: 16px;
 }
 
-/* LEFT: logo */
+/* LOGO — smaller + calmer */
 .logo {
-  width: 150px;
+  width: 110px;
   height: auto;
 }
 
-/* RIGHT container */
+/* RIGHT SIDE — now horizontal, not stacked */
 .nav-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Name */
+/* NAME */
 .brand {
   font-family: 'Nosifer', cursive;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1;
 }
 
-/* Instagram */
+/* INSTAGRAM */
 .nav-link {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.08em;
   color: #000;
   text-decoration: none;
-  border-bottom: 1px solid #000;
-  padding-bottom: 2px;
+  border: 1px solid #000;
+  padding: 4px 6px;
 }
 
     .intro {
@@ -183,11 +182,11 @@
 </head>
 <body>
   <main class="page">
-    <header class="navbar">
+  <header class="navbar">
   <img src="logo.png" alt="Logo" class="logo" />
 
   <div class="nav-right">
-    <div class="brand">Hamid Shams</div>
+    <span class="brand">Hamid Shams</span>
     <a
       href="https://www.instagram.com/__hamidshams__/"
       target="_blank"
