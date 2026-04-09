@@ -2,47 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
   <title>Limited Edition Perfume</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nosifer&display=swap" rel="stylesheet">
 
 <style>
-    :root {
-      --bg: #EEFF00;
-      --text: #000;
-      --border: #000;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Open Sans', sans-serif;
-    }
-
-    .page {
-      padding: 14px 14px 24px;
-    }
-
-  .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* important */
-  gap: 12px;
-  margin-bottom: 18px;
-  padding-bottom: 8px;
-  /* border-bottom: 1px solid #000; */
+:root {
+  --bg: #EEFF00;
+  --text: #000;
 }
 
-/* LEFT SIDE */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.page {
+  padding: 14px;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
 .header-left {
   max-width: 60%;
 }
@@ -53,7 +47,6 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  line-height: 1.2;
 }
 
 .intro-text {
@@ -62,57 +55,12 @@
   line-height: 1.5;
 }
 
-.intro-text a {
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #000;
-}
-
-
-.navbar {
+.contact-buttons {
+  margin-top: 12px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 14px;
-  padding-bottom: 6px;
-  /* border-bottom: 1px solid #000; /* important */ */
-}
-
-/* LEFT: title */
-.nav-left {
-  max-width: 55%;
-}
-
-.nav-title {
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  line-height: 1.2;
-}
-
-/* RIGHT: logo + instagram */
-.nav-right {
-  display: flex;
-  align-items: center;
   gap: 8px;
 }
 
-.header-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 6px;
-}
-
-/* LOGO */
-.logo {
-  width: 160px;
-  height: auto;
-}
-
-
-/* INSTAGRAM */
 .nav-link {
   font-size: 9px;
   font-weight: 700;
@@ -124,204 +72,149 @@
   padding: 3px 5px;
 }
 
-    .intro {
-      margin-bottom: 16px;
-    }
+/* RIGHT */
 
-
-  
-    .scroll-wrap {
-      display: flex;
-      gap: 14px;
-      overflow-x: auto;
-      padding-bottom: 8px;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    .scroll-wrap::-webkit-scrollbar {
-      height: 6px;
-    }
-
-    .scroll-wrap::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.35);
-    }
-
-    .product {
-      flex: 0 0 82%;
-      max-width: 82%;
-      border: 2px solid var(--border);
-      padding: 10px;
-      scroll-snap-align: start;
-      background: transparent;
-    }
-
-    .product-image {
-      width: 100%;
-      max-width: 180px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-      border: 1px solid var(--border);
-    }
-
-    .product-title {
-      margin: 0 0 8px;
-      font-size: 18px;
-      line-height: 1.15;
-      font-weight: 700;
-    }
-
-    .product-text {
-      margin: 0 0 12px;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .product-note {
-      margin: 0 0 12px;
-      font-size: 11px;
-      line-height: 1.4;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .product-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .price {
-      font-size: 16px;
-      font-weight: 700;
-    }
-
-    .buy-button {
-      display: inline-block;
-      padding: 12px 14px;
-      border: 2px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
-      background: transparent;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      text-align: center;
-    }
-
-  .contact-buttons {
-  margin-top: 10px; /* space from text */
+.header-right {
   display: flex;
-  gap: 6px;
+  align-items: flex-start;
 }
-  </style>
+
+.logo {
+  width: 120px;
+}
+
+/* SCROLL */
+
+.scroll-wrap {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+/* PRODUCT TILE */
+
+.product {
+  position: relative;
+  flex: 0 0 82%;
+  max-width: 82%;
+  height: 300px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+/* IMAGE FULL COVER */
+
+.product-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* DARK OVERLAY */
+
+.product::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
+}
+
+/* TEXT ON IMAGE */
+
+.product-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px;
+  z-index: 1;
+  color: white;
+}
+
+.product-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.product-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+</style>
 </head>
+
 <body>
-  <main class="page">
-  <header class="header">
+<main class="page">
+
+<header class="header">
   <div class="header-left">
     <h1 class="intro-title">Limited Edition Perfumes</h1>
     <p class="intro-text">
       Each perfume is sold with an accompanying image print.<br>
-      For acquisition inquiries:<br>
-      <div class="contact-buttons">
-  <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
-  <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank">Instagram</a>
-</div>
+      For acquisition inquiries:
     </p>
+
+    <div class="contact-buttons">
+      <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
+      <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank">Instagram</a>
+    </div>
   </div>
 
   <div class="header-right">
-    <img src="logo.png" alt="Logo" class="logo" />
+    <img src="logo.png" class="logo">
   </div>
 </header>
 
+<section class="scroll-wrap">
 
-    <section class="scroll-wrap">
-      <article class="product">
-        <img src="perfume-1.JPG" alt="Calcined Bone Dust" class="product-image" />
-        <h2 class="product-title">Calcined Bone Dust</h2>
-        <p class="product-text">
-          Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter.
-        </p>
-        <p class="product-note">Includes perfume + image print</p>
-        <!-- <div class="product-footer">
-          <div class="price">€150</div>
-          <a
-            href="https://www.paypal.com/paypalme/YOURNAME/150"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="buy-button"
-          >
-            Buy
-          </a>
-        </div> -->
-      </article>
+  <article class="product">
+    <img src="perfume-1.JPG" class="product-image">
+    <div class="product-content">
+      <h2 class="product-title">Calcined Bone Dust</h2>
+      <p class="product-text">
+        Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter.
+      </p>
+    </div>
+  </article>
 
-      <article class="product">
-        <img src="perfume-2.JPG" alt="Marrow Residue" class="product-image" />
-        <h2 class="product-title">Marrow Residue</h2>
-        <p class="product-text">
-          Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate, like something that lingers beneath the surface.
-        </p>
-        <p class="product-note">Includes perfume + image print</p>
-        <!-- <div class="product-footer">
-          <div class="price">€150</div>
-          <a
-            href="https://www.paypal.com/paypalme/YOURNAME/150"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="buy-button"
-          >
-            Buy
-          </a>
-        </div> -->
-      </article>
+  <article class="product">
+    <img src="perfume-2.JPG" class="product-image">
+    <div class="product-content">
+      <h2 class="product-title">Marrow Residue</h2>
+      <p class="product-text">
+        Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate.
+      </p>
+    </div>
+  </article>
 
-      <article class="product">
-        <img src="perfume-3.JPG" alt="Ossified Oil" class="product-image" />
-        <h2 class="product-title">Ossified Oil</h2>
-        <p class="product-text">
-          An imagined oil derived from bone structure. Thick, slow, slightly metallic—something between mineral and body, resisting full transformation.
-        </p>
-        <p class="product-note">Includes perfume + image print</p>
-        <!-- <div class="product-footer">
-          <div class="price">€150</div>
-          <a
-            href="https://www.paypal.com/paypalme/YOURNAME/150"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="buy-button"
-          >
-            Buy
-          </a>
-        </div> -->
-      </article>
+  <article class="product">
+    <img src="perfume-3.JPG" class="product-image">
+    <div class="product-content">
+      <h2 class="product-title">Ossified Oil</h2>
+      <p class="product-text">
+        An imagined oil derived from bone structure. Thick, slow, slightly metallic—between mineral and body.
+      </p>
+    </div>
+  </article>
 
-      <article class="product">
-        <img src="perfume-4.JPG" alt="Ash of Structure" class="product-image" />
-        <h2 class="product-title">Ash of Structure</h2>
-        <p class="product-text">
-          What is left after the last form collapses. Light, airborne, almost absent yet persistent, settling quietly onto everything.
-        </p>
-        <p class="product-note">Includes perfume + image print</p>
-        <!-- <div class="product-footer">
-          <div class="price">€150</div>
-          <a
-            href="https://www.paypal.com/paypalme/YOURNAME/150"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="buy-button"
-          >
-            Buy
-          </a>
-        </div> -->
-      </article>
-    </section>
-  </main>
+  <article class="product">
+    <img src="perfume-4.JPG" class="product-image">
+    <div class="product-content">
+      <h2 class="product-title">Ash of Structure</h2>
+      <p class="product-text">
+        What is left after the last form collapses. Light, airborne, almost absent yet persistent.
+      </p>
+    </div>
+  </article>
+
+</section>
+
+</main>
 </body>
 </html>
