@@ -10,11 +10,11 @@
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nosifer&display=swap" rel="stylesheet">
 
-  <style>
+<style>
     :root {
       --bg: #EEFF00;
-      --text: #000000;
-      --border: #000000;
+      --text: #000;
+      --border: #000;
     }
 
     * {
@@ -29,175 +29,184 @@
     }
 
     .page {
-      width: 100%;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: 0 16px 40px;
+      padding: 14px 14px 24px;
     }
 
     .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0 22px;
-      gap: 12px;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
 
-    .brand {
-      font-family: 'Nosifer', cursive;
-      font-size: 22px;
-      line-height: 1;
-      text-decoration: none;
-      color: var(--text);
-    }
+/* LEFT: logo */
+.logo {
+  width: 100px;
+  height: auto;
+}
 
-    .nav-link {
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      color: var(--text);
-      text-decoration: none;
-      border-bottom: 1px solid var(--text);
-      padding-bottom: 2px;
-    }
+/* RIGHT container */
+.nav-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+/* Name */
+.brand {
+  font-family: 'Nosifer', cursive;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Instagram */
+.nav-link {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 2px;
+}
 
     .intro {
-      margin-bottom: 28px;
+      margin-bottom: 16px;
     }
 
     .intro-title {
-      font-size: 16px;
-      font-weight: 600;
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 0 0 10px;
+      letter-spacing: 0.08em;
     }
 
     .intro-text {
       margin: 0;
-      font-size: 14px;
-      line-height: 1.55;
-      max-width: 36ch;
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 32ch;
     }
 
-    .products {
-      display: grid;
-      gap: 28px;
+    .scroll-wrap {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      padding-bottom: 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .scroll-wrap::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .scroll-wrap::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.35);
     }
 
     .product {
-      border-top: 2px solid var(--border);
-      padding-top: 18px;
+      flex: 0 0 82%;
+      max-width: 82%;
+      border: 2px solid var(--border);
+      padding: 10px;
+      scroll-snap-align: start;
+      background: transparent;
     }
 
     .product-image {
       width: 100%;
+      max-width: 180px;
+      height: auto;
       display: block;
-      margin-bottom: 12px;
-      border: 2px solid var(--border);
+      margin: 0 auto 10px;
+      border: 1px solid var(--border);
     }
 
     .product-title {
-      margin: 0 0 10px;
-      font-size: 22px;
-      line-height: 1.1;
+      margin: 0 0 8px;
+      font-size: 18px;
+      line-height: 1.15;
       font-weight: 700;
     }
 
     .product-text {
-      margin: 0 0 14px;
-      font-size: 14px;
-      line-height: 1.6;
+      margin: 0 0 12px;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .product-note {
-      margin: 0 0 14px;
-      font-size: 13px;
-      line-height: 1.5;
-      font-weight: 600;
+      margin: 0 0 12px;
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.03em;
+      letter-spacing: 0.05em;
     }
 
     .product-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .price {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
     }
 
     .buy-button {
       display: inline-block;
-      padding: 14px 18px;
+      padding: 12px 14px;
       border: 2px solid var(--border);
       color: var(--text);
       text-decoration: none;
       background: transparent;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      min-width: 120px;
       text-align: center;
-    }
-
-    .buy-button:active {
-      transform: translateY(1px);
-    }
-
-    @media (min-width: 700px) {
-      .page {
-        max-width: 980px;
-        padding: 0 24px 56px;
-      }
-
-      .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 36px 28px;
-      }
-
-      .product {
-        padding-top: 20px;
-      }
     }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="navbar">
-      <a href="index.html" class="brand">Hamid Shams</a>
-      <a
-        href="https://www.instagram.com/__hamidshams__/"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="nav-link"
-      >
-        Instagram
-      </a>
-    </header>
+  <img src="logo.png" alt="Logo" class="logo" />
 
-    <section class="intro">
+  <div class="nav-right">
+    <div class="brand">Hamid Shams</div>
+    <a
+      href="https://www.instagram.com/__hamidshams__/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="nav-link"
+    >
+      Instagram
+    </a>
+  </div>
+</header>
+
+
+     <section class="intro">
       <h1 class="intro-title">Limited Edition Perfumes</h1>
       <p class="intro-text">
-        Each edition is sold with its corresponding image print.
-        Price: 150 EUR.
+        Each perfume is sold with its corresponding image print. Price: €150.
       </p>
     </section>
 
-    <section class="products">
+    <section class="scroll-wrap">
       <article class="product">
         <img src="perfume-1.JPG" alt="Calcined Bone Dust" class="product-image" />
         <h2 class="product-title">1. Calcined Bone Dust</h2>
         <p class="product-text">
-          Bone reduced to a pale mineral powder through heat.
-          Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter.
+          Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter.
         </p>
         <p class="product-note">Includes perfume + image print</p>
         <div class="product-footer">
@@ -217,8 +226,7 @@
         <img src="perfume-2.JPG" alt="Marrow Residue" class="product-image" />
         <h2 class="product-title">2. Marrow Residue</h2>
         <p class="product-text">
-          Not the marrow itself, but what remains after extraction.
-          A dense, almost invisible base—warm, heavy, and difficult to locate, like something that lingers beneath the surface.
+          Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate, like something that lingers beneath the surface.
         </p>
         <p class="product-note">Includes perfume + image print</p>
         <div class="product-footer">
@@ -238,8 +246,7 @@
         <img src="perfume-3.JPG" alt="Ossified Oil" class="product-image" />
         <h2 class="product-title">3. Ossified Oil</h2>
         <p class="product-text">
-          An imagined oil derived from bone structure.
-          Thick, slow, slightly metallic—something between mineral and body, resisting full transformation.
+          An imagined oil derived from bone structure. Thick, slow, slightly metallic—something between mineral and body, resisting full transformation.
         </p>
         <p class="product-note">Includes perfume + image print</p>
         <div class="product-footer">
@@ -259,8 +266,7 @@
         <img src="perfume-4.JPG" alt="Ash of Structure" class="product-image" />
         <h2 class="product-title">4. Ash of Structure</h2>
         <p class="product-text">
-          What is left after the last form collapses.
-          Light, airborne, almost absent yet persistent, settling quietly onto everything.
+          What is left after the last form collapses. Light, airborne, almost absent yet persistent, settling quietly onto everything.
         </p>
         <p class="product-note">Includes perfume + image print</p>
         <div class="product-footer">
