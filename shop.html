@@ -16,14 +16,21 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       margin: 0;
+    }
+
+    body {
       background: var(--bg);
       font-family: 'Open Sans', sans-serif;
       color: #000;
     }
 
     .page {
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
       padding: 14px;
     }
 
@@ -31,8 +38,9 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      margin-bottom: 18px;
       gap: 12px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
     }
 
     .header-left {
@@ -75,15 +83,20 @@
     .logo {
       width: 160px;
       height: auto;
+      flex-shrink: 0;
     }
 
     .scroll-wrap {
+      flex: 1;
+      min-height: 0;
       display: flex;
       gap: 14px;
       overflow-x: auto;
+      overflow-y: hidden;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 6px;
+      align-items: stretch;
+      padding-bottom: 2px;
     }
 
     .scroll-wrap::-webkit-scrollbar {
@@ -98,13 +111,15 @@
       position: relative;
       flex: 0 0 75%;
       max-width: 75%;
+      height: 100%;
+      min-height: 100%;
       scroll-snap-align: start;
       cursor: pointer;
     }
 
     .product-image {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      height: 100%;
       object-fit: cover;
       border: 6px solid white;
       display: block;
@@ -271,7 +286,7 @@
         <div class="modal-title">${item.title}</div>
         <div class="modal-text">${item.text}</div>
         <div class="modal-meta-group">
-          <div class="modal-meta-main">Each perfume is sold with an image print.</div>
+          <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
           <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
         </div>
       `;
