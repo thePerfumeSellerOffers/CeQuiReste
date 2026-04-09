@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, maximum-scale=1"
+  />
+  <title>Hamid Shams</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nosifer&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #EEFF00;
+      --text: #000000;
+      --border: #000000;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .page {
+      width: 100%;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 0 16px 40px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0 22px;
+      gap: 12px;
+    }
+
+    .brand {
+      font-family: 'Nosifer', cursive;
+      font-size: 22px;
+      line-height: 1;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .nav-link {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 2px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    .intro-title {
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 10px;
+    }
+
+    .intro-text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.55;
+      max-width: 36ch;
+    }
+
+    .products {
+      display: grid;
+      gap: 28px;
+    }
+
+    .product {
+      border-top: 2px solid var(--border);
+      padding-top: 18px;
+    }
+
+    .product-image {
+      width: 100%;
+      display: block;
+      margin-bottom: 12px;
+      border: 2px solid var(--border);
+    }
+
+    .product-title {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .product-text {
+      margin: 0 0 14px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .product-note {
+      margin: 0 0 14px;
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .product-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .buy-button {
+      display: inline-block;
+      padding: 14px 18px;
+      border: 2px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      background: transparent;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      min-width: 120px;
+      text-align: center;
+    }
+
+    .buy-button:active {
+      transform: translateY(1px);
+    }
+
+    @media (min-width: 700px) {
+      .page {
+        max-width: 980px;
+        padding: 0 24px 56px;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 36px 28px;
+      }
+
+      .product {
+        padding-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header class="navbar">
+      <a href="index.html" class="brand">Hamid Shams</a>
+      <a
+        href="https://www.instagram.com/__hamidshams__/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="nav-link"
+      >
+        Instagram
+      </a>
+    </header>
+
+    <section class="intro">
+      <h1 class="intro-title">Limited Edition Perfumes</h1>
+      <p class="intro-text">
+        Each edition is sold with its corresponding image print.
+        Price: 150 EUR.
+      </p>
+    </section>
+
+    <section class="products">
+      <article class="product">
+        <img src="perfume-1.jpg" alt="Calcined Bone Dust" class="product-image" />
+        <h2 class="product-title">1. Calcined Bone Dust</h2>
+        <p class="product-text">
+          Bone reduced to a pale mineral powder through heat.
+          Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter.
+        </p>
+        <p class="product-note">Includes perfume + image print</p>
+        <div class="product-footer">
+          <div class="price">€150</div>
+          <a
+            href="https://www.paypal.com/paypalme/YOURNAME/150"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="buy-button"
+          >
+            Buy
+          </a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="perfume-2.jpg" alt="Marrow Residue" class="product-image" />
+        <h2 class="product-title">2. Marrow Residue</h2>
+        <p class="product-text">
+          Not the marrow itself, but what remains after extraction.
+          A dense, almost invisible base—warm, heavy, and difficult to locate, like something that lingers beneath the surface.
+        </p>
+        <p class="product-note">Includes perfume + image print</p>
+        <div class="product-footer">
+          <div class="price">€150</div>
+          <a
+            href="https://www.paypal.com/paypalme/YOURNAME/150"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="buy-button"
+          >
+            Buy
+          </a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="perfume-3.jpg" alt="Ossified Oil" class="product-image" />
+        <h2 class="product-title">3. Ossified Oil</h2>
+        <p class="product-text">
+          An imagined oil derived from bone structure.
+          Thick, slow, slightly metallic—something between mineral and body, resisting full transformation.
+        </p>
+        <p class="product-note">Includes perfume + image print</p>
+        <div class="product-footer">
+          <div class="price">€150</div>
+          <a
+            href="https://www.paypal.com/paypalme/YOURNAME/150"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="buy-button"
+          >
+            Buy
+          </a>
+        </div>
+      </article>
+
+      <article class="product">
+        <img src="perfume-4.jpg" alt="Ash of Structure" class="product-image" />
+        <h2 class="product-title">4. Ash of Structure</h2>
+        <p class="product-text">
+          What is left after the last form collapses.
+          Light, airborne, almost absent yet persistent, settling quietly onto everything.
+        </p>
+        <p class="product-note">Includes perfume + image print</p>
+        <div class="product-footer">
+          <div class="price">€150</div>
+          <a
+            href="https://www.paypal.com/paypalme/YOURNAME/150"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="buy-button"
+          >
+            Buy
+          </a>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
