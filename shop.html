@@ -1,272 +1,287 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-<title>Limited Edition Perfume</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>Limited Edition Perfume</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Nosifer&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root {
-  --bg: #EEFF00;
-}
+  <style>
+    :root {
+      --bg: #EEFF00;
+    }
 
-* { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  background: var(--bg);
-  font-family: 'Open Sans', sans-serif;
-}
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: 'Open Sans', sans-serif;
+      color: #000;
+    }
 
-.page { padding: 14px; }
+    .page {
+      padding: 14px;
+    }
 
-/* HEADER */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 18px;
+      gap: 12px;
+    }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 18px;
-}
+    .header-left {
+      max-width: 60%;
+    }
 
-.header-left { max-width: 60%; }
+    .intro-title {
+      margin: 0 0 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      line-height: 1.2;
+    }
 
-.intro-title {
-  margin: 0 0 6px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
+    .intro-text {
+      margin: 0;
+      font-size: 12px;
+      line-height: 1.5;
+    }
 
-.intro-text {
-  margin: 0;
-  font-size: 12px;
-  line-height: 1.5;
-}
+    .contact-buttons {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
 
-.contact-buttons {
-  margin-top: 12px;
-  display: flex;
-  gap: 8px;
-}
+    .nav-link {
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #000;
+      text-decoration: none;
+      border: 1px solid #000;
+      padding: 3px 5px;
+    }
 
-.nav-link {
-  font-size: 9px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #000;
-  text-decoration: none;
-  border: 1px solid #000;
-  padding: 3px 5px;
-}
+    .logo {
+      width: 120px;
+      height: auto;
+    }
 
-.logo { width: 160px; }
+    .scroll-wrap {
+      display: flex;
+      gap: 14px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 6px;
+    }
 
-/* SCROLL */
+    .scroll-wrap::-webkit-scrollbar {
+      height: 6px;
+    }
 
-.scroll-wrap {
-  display: flex;
-  gap: 14px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
+    .scroll-wrap::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, 0.35);
+    }
 
-/* PRODUCT */
+    .product {
+      position: relative;
+      flex: 0 0 75%;
+      max-width: 75%;
+      scroll-snap-align: start;
+      cursor: pointer;
+    }
 
-.product {
-  position: relative;
-  flex: 0 0 75%;
-  max-width: 75%;
-  scroll-snap-align: start;
-  cursor: pointer;
-}
+    .product-image {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      border: 6px solid white;
+      display: block;
+    }
 
-/* IMAGE */
+    .product-title {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      color: white;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.2;
+      text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+    }
 
-.product-image {
-  width: 100%;
-  aspect-ratio: 3/4;
-  object-fit: cover;
-  border: 6px solid white;
-}
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: #EEFF00;
+      display: none;
+      z-index: 10;
+      overflow-y: auto;
+    }
 
-/* TITLE ON IMAGE */
+    .modal.active {
+      display: block;
+    }
 
-.product-title {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  color: white;
-  font-size: 16px;
-  font-weight: 700;
-  z-index: 1;
-}
+    .close {
+      position: fixed;
+      top: 10px;
+      right: 14px;
+      font-size: 20px;
+      line-height: 1;
+      cursor: pointer;
+      z-index: 11;
+    }
 
-/* DARK GRADIENT FOR READABILITY */
+    .modal-content {
+      padding: 18px 18px 28px;
+      max-width: 420px;
+      margin: 0 auto;
+    }
 
-.product::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
-}
+    .modal img {
+      width: 100%;
+      border: 6px solid white;
+      margin-bottom: 18px;
+      display: block;
+    }
 
-/* MODAL */
+    .modal-title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
 
-.modal {
-  position: fixed;
-  inset: 0;
-  background: #EEFF00;
-  display: none;
-  z-index: 10;
-  overflow-y: auto;
-}
+    .modal-text {
+      font-size: 14px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      max-width: 36ch;
+    }
 
-.modal.active { display: block; }
+    .modal-meta-group {
+      margin-top: 16px;
+      max-width: 36ch;
+    }
 
-.modal-content {
-  padding: 20px;
-}
+    .modal-meta-main {
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 8px;
+    }
 
-.modal img {
-  width: 100%;
-  border: 6px solid white;
-  margin-bottom: 12px;
-}
-
-.modal-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.modal-text {
-  font-size: 14px;
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-
-.modal-meta {
-  font-size: 12px;
-  margin-bottom: 6px;
-}
-
-.close {
-  position: fixed;
-  top: 10px;
-  right: 14px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-</style>
+    .modal-meta-sub {
+      font-size: 12px;
+      line-height: 1.5;
+      opacity: 0.8;
+    }
+  </style>
 </head>
-
 <body>
+  <main class="page">
+    <header class="header">
+      <div class="header-left">
+        <h1 class="intro-title">Limited Edition Perfumes</h1>
+        <p class="intro-text">
+          Each perfume is sold with an accompanying image print.<br>
+          For acquisition inquiries:
+        </p>
 
-<main class="page">
+        <div class="contact-buttons">
+          <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
+          <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
 
-<header class="header">
-  <div class="header-left">
-    <h1 class="intro-title">Limited Edition Perfumes</h1>
-    <p class="intro-text">
-      Each perfume is sold with an accompanying image print.<br>
-      For acquisition inquiries:
-    </p>
+      <img src="logo.png" alt="Logo" class="logo">
+    </header>
 
-    <div class="contact-buttons">
-      <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
-      <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank">Instagram</a>
-    </div>
+    <section class="scroll-wrap">
+      <div class="product" onclick="openModal(0)">
+        <img src="perfume-1.JPG" alt="Calcined Bone Dust" class="product-image">
+        <div class="product-title">Calcined Bone Dust</div>
+      </div>
+
+      <div class="product" onclick="openModal(1)">
+        <img src="perfume-2.JPG" alt="Marrow Residue" class="product-image">
+        <div class="product-title">Marrow Residue</div>
+      </div>
+
+      <div class="product" onclick="openModal(2)">
+        <img src="perfume-3.JPG" alt="Ossified Oil" class="product-image">
+        <div class="product-title">Ossified Oil</div>
+      </div>
+
+      <div class="product" onclick="openModal(3)">
+        <img src="perfume-4.JPG" alt="Ash of Structure" class="product-image">
+        <div class="product-title">Ash of Structure</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="modal">
+    <div class="close" onclick="closeModal()">✕</div>
+    <div class="modal-content" id="modalContent"></div>
   </div>
 
-  <img src="logo.png" class="logo">
-</header>
+  <script>
+    const data = [
+      {
+        title: "Calcined Bone Dust",
+        img: "perfume-1.JPG",
+        text: "Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter."
+      },
+      {
+        title: "Marrow Residue",
+        img: "perfume-2.JPG",
+        text: "Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate."
+      },
+      {
+        title: "Ossified Oil",
+        img: "perfume-3.JPG",
+        text: "An imagined oil derived from bone structure. Thick, slow, slightly metallic—between mineral and body."
+      },
+      {
+        title: "Ash of Structure",
+        img: "perfume-4.JPG",
+        text: "What is left after the last form collapses. Light, airborne, almost absent yet persistent."
+      }
+    ];
 
-<section class="scroll-wrap">
+    function openModal(i) {
+      const item = data[i];
+      const modal = document.getElementById("modal");
+      const content = document.getElementById("modalContent");
 
-  <div class="product" onclick="openModal(0)">
-    <img src="perfume-1.JPG" class="product-image">
-    <div class="product-title">Calcined Bone Dust</div>
-  </div>
+      content.innerHTML = `
+        <img src="${item.img}" alt="${item.title}">
+        <div class="modal-title">${item.title}</div>
+        <div class="modal-text">${item.text}</div>
+        <div class="modal-meta-group">
+          <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
+          <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
+        </div>
+      `;
 
-  <div class="product" onclick="openModal(1)">
-    <img src="perfume-2.JPG" class="product-image">
-    <div class="product-title">Marrow Residue</div>
-  </div>
+      modal.classList.add("active");
+    }
 
-  <div class="product" onclick="openModal(2)">
-    <img src="perfume-3.JPG" class="product-image">
-    <div class="product-title">Ossified Oil</div>
-  </div>
-
-  <div class="product" onclick="openModal(3)">
-    <img src="perfume-4.JPG" class="product-image">
-    <div class="product-title">Ash of Structure</div>
-  </div>
-
-</section>
-
-</main>
-
-<!-- MODAL -->
-
-<div class="modal" id="modal">
-  <div class="close" onclick="closeModal()">✕</div>
-  <div class="modal-content" id="modalContent"></div>
-</div>
-
-<script>
-
-const data = [
-{
-title: "Calcined Bone Dust",
-img: "perfume-1.JPG",
-text: "Bone reduced to a pale mineral powder through heat. Dry, almost scentless, but it holds a faint trace of something that once was organic—like memory turned into matter."
-},
-{
-title: "Marrow Residue",
-img: "perfume-2.JPG",
-text: "Not the marrow itself, but what remains after extraction. A dense, almost invisible base—warm, heavy, and difficult to locate."
-},
-{
-title: "Ossified Oil",
-img: "perfume-3.JPG",
-text: "An imagined oil derived from bone structure. Thick, slow, slightly metallic—between mineral and body."
-},
-{
-title: "Ash of Structure",
-img: "perfume-4.JPG",
-text: "What is left after the last form collapses. Light, airborne, almost absent yet persistent."
-}
-];
-
-function openModal(i){
-  const item = data[i];
-  const modal = document.getElementById("modal");
-  const content = document.getElementById("modalContent");
-
-  content.innerHTML = `
-    <img src="${item.img}">
-    <div class="modal-title">${item.title}</div>
-    <div class="modal-text">${item.text}</div>
-    <div class="modal-meta">Each perfume is sold with an accompanying image print.</div>
-    <div class="modal-meta">Pinhole photography, c-print, 10x15cm, 2025</div>
-  `;
-
-  modal.classList.add("active");
-}
-
-function closeModal(){
-  document.getElementById("modal").classList.remove("active");
-}
-
-</script>
-
+    function closeModal() {
+      document.getElementById("modal").classList.remove("active");
+    }
+  </script>
 </body>
 </html>
