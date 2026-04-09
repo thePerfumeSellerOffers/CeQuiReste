@@ -32,6 +32,43 @@
       padding: 14px 14px 24px;
     }
 
+  .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* important */
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #000;
+}
+
+/* LEFT SIDE */
+.header-left {
+  max-width: 60%;
+}
+
+.intro-title {
+  margin: 0 0 6px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+}
+
+.intro-text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.intro-text a {
+  color: #000;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+}
+
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -61,11 +98,19 @@
   gap: 8px;
 }
 
+.header-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
 /* LOGO */
 .logo {
-  width: 90px; /* smaller → cleaner */
+  width: 120px;
   height: auto;
 }
+
 
 /* INSTAGRAM */
 .nav-link {
@@ -83,26 +128,7 @@
       margin-bottom: 16px;
     }
 
-    .intro-title {
-      margin: 0 0 8px;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
 
-    .intro-text {
-      margin: 0;
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 32ch;
-    }
-
-  .intro-text a {
-  color: #000;
-  text-decoration: none;
-  border-bottom: 1px solid #000;
-}
   
     .scroll-wrap {
       display: flex;
@@ -190,12 +216,17 @@
 </head>
 <body>
   <main class="page">
-  <header class="navbar">
-  <div class="nav-left">
-    <span class="nav-title">Limited Edition Perfumes</span>
+  <header class="header">
+  <div class="header-left">
+    <h1 class="intro-title">Limited Edition Perfumes</h1>
+    <p class="intro-text">
+      Each perfume is sold with an accompanying image print.<br>
+      For acquisition inquiries:<br>
+      <a href="mailto:hamid.m.shams@gmail.com">hamid.m.shams@gmail.com</a>
+    </p>
   </div>
 
-  <div class="nav-right">
+  <div class="header-right">
     <img src="logo.png" alt="Logo" class="logo" />
     <a
       href="https://www.instagram.com/__hamidshams__/"
@@ -208,15 +239,6 @@
   </div>
 </header>
 
-
-     <section class="intro">
-      <h1 class="intro-title">Limited Edition Perfumes</h1>
-      <p class="intro-text">
-  Each perfume is sold with an accompanying image print.<br>
-  For acquisition inquiries, please contact:<br>
-  <a href="mailto:hamid.m.shams@gmail.com">hamid.m.shams@gmail.com</a>
-</p>
-    </section>
 
     <section class="scroll-wrap">
       <article class="product">
