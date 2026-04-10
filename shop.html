@@ -17,20 +17,17 @@
 html, body {
   margin: 0;
   height: 100%;
-}
-
-body {
+  overflow: hidden; /* 🔥 removes extra scroll */
   background: var(--bg);
   font-family: 'Open Sans', sans-serif;
 }
 
-/* PAGE */
-
+/* FULL HEIGHT FIX (Safari-safe) */
 .page {
-  min-height: 100dvh; /* ✅ Safari-safe */
+  height: 100dvh;
   display: flex;
   flex-direction: column;
-  padding: 14px;
+  padding: 14px 14px 6px; /* 👈 reduced bottom padding */
 }
 
 /* HEADER */
@@ -39,9 +36,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   gap: 12px;
-  flex-shrink: 0;
 }
 
 .header-left {
@@ -59,13 +55,13 @@ body {
 .intro-text {
   margin: 0;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .contact-buttons {
-  margin-top: 10px;
+  margin-top: 8px;
   display: flex;
-  gap: 8px;
+  gap: 6px;
 }
 
 .nav-link {
@@ -87,13 +83,11 @@ body {
 
 .scroll-wrap {
   flex: 1;
-  min-height: 0; /* ✅ CRITICAL FIX */
   display: flex;
-  gap: 12px;
+  gap: 10px;
   overflow-x: auto;
-  overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  align-items: stretch;
+  -webkit-overflow-scrolling: touch;
 }
 
 /* PRODUCT */
@@ -101,14 +95,11 @@ body {
 .product {
   flex: 0 0 75%;
   height: 100%;
-  min-height: 0; /* ✅ prevents overflow */
   position: relative;
   scroll-snap-align: start;
   cursor: pointer;
-  padding: 3px; /* ✅ spacing without breaking layout */
+  padding: 3px; /* 👈 stable spacing */
 }
-
-/* IMAGE */
 
 .product-image {
   width: 100%;
@@ -118,15 +109,13 @@ body {
   display: block;
 }
 
-/* TITLE */
-
 .product-title {
   position: absolute;
   bottom: 12px;
   left: 12px;
   right: 12px;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 700;
   text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
@@ -172,19 +161,14 @@ body {
 
 .modal-text {
   font-size: 14px;
-  line-height: 1.7;
-  margin-bottom: 20px;
-  max-width: 36ch;
-}
-
-.modal-meta-group {
-  margin-top: 16px;
+  line-height: 1.6;
+  margin-bottom: 18px;
   max-width: 36ch;
 }
 
 .modal-meta-main {
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
 
 .modal-meta-sub {
@@ -280,10 +264,8 @@ function openModal(i){
     <img src="${item.img}">
     <div class="modal-title">${item.title}</div>
     <div class="modal-text">${item.text}</div>
-    <div class="modal-meta-group">
-      <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
-      <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
-    </div>
+    <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
+    <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
   `;
 
   modal.classList.add("active");
