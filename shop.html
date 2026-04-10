@@ -24,6 +24,8 @@ body {
 
 .page {
   padding: 14px;
+  max-width: 420px;   /* 👈 fixed column width */
+  margin: 0 auto;     /* 👈 centered */
 }
 
 /* HEADER */
@@ -75,21 +77,22 @@ body {
   width: 160px;
 }
 
-/* PRODUCT LIST (VERTICAL) */
+/* PRODUCT LIST */
 
 .product-list {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 /* PRODUCT */
 
 .product {
+  position: relative;
   cursor: pointer;
 }
 
-/* IMAGE (NATURAL RATIO) */
+/* IMAGE */
 
 .product-image {
   width: 100%;
@@ -98,12 +101,17 @@ body {
   border: 6px solid white;
 }
 
-/* TITLE BELOW IMAGE */
+/* TITLE ON IMAGE */
 
 .product-title {
-  margin-top: 8px;
-  font-size: 14px;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  color: white;
+  font-size: 15px;
   font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
 /* MODAL */
