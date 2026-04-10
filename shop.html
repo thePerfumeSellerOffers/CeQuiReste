@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Limited Edition Perfume</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
@@ -14,20 +14,16 @@
 
 * { box-sizing: border-box; }
 
-html, body {
+body {
   margin: 0;
-  height: 100%;
-  overflow: hidden; /* 🔥 removes extra scroll */
   background: var(--bg);
   font-family: 'Open Sans', sans-serif;
 }
 
-/* FULL HEIGHT FIX (Safari-safe) */
+/* PAGE */
+
 .page {
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  padding: 14px 14px 6px; /* 👈 reduced bottom padding */
+  padding: 14px;
 }
 
 /* HEADER */
@@ -36,7 +32,7 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   gap: 12px;
 }
 
@@ -55,11 +51,11 @@ html, body {
 .intro-text {
   margin: 0;
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .contact-buttons {
-  margin-top: 8px;
+  margin-top: 10px;
   display: flex;
   gap: 6px;
 }
@@ -72,52 +68,42 @@ html, body {
   color: #000;
   text-decoration: none;
   border: 1px solid #000;
-  padding: 3px 5px;
+  padding: 3px 6px;
 }
 
 .logo {
   width: 160px;
 }
 
-/* SCROLL AREA */
+/* PRODUCT LIST (VERTICAL) */
 
-.scroll-wrap {
-  flex: 1;
+.product-list {
   display: flex;
-  gap: 10px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+  flex-direction: column;
+  gap: 18px;
 }
 
 /* PRODUCT */
 
 .product {
-  flex: 0 0 75%;
-  height: 100%;
-  position: relative;
-  scroll-snap-align: start;
   cursor: pointer;
-  padding: 3px; /* 👈 stable spacing */
 }
+
+/* IMAGE (NATURAL RATIO) */
 
 .product-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border: 6px solid white;
+  height: auto;
   display: block;
+  border: 6px solid white;
 }
 
+/* TITLE BELOW IMAGE */
+
 .product-title {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  color: white;
-  font-size: 15px;
+  margin-top: 8px;
+  font-size: 14px;
   font-weight: 700;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
 }
 
 /* MODAL */
@@ -199,7 +185,7 @@ html, body {
   <img src="logo.png" class="logo">
 </header>
 
-<section class="scroll-wrap">
+<section class="product-list">
 
   <div class="product" onclick="openModal(0)">
     <img src="perfume-1.JPG" class="product-image">
@@ -264,7 +250,6 @@ function openModal(i){
     <img src="${item.img}">
     <div class="modal-title">${item.title}</div>
     <div class="modal-text">${item.text}</div>
-    <div class="modal-meta-main">Each perfume is sold with an accompanying image print.</div>
     <div class="modal-meta-sub">Pinhole photography, c-print, 10×15 cm, 2025</div>
   `;
 
