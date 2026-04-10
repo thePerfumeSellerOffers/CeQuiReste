@@ -14,16 +14,20 @@
 
 * { box-sizing: border-box; }
 
-body {
+html, body {
   margin: 0;
+  height: 100%;
+}
+
+body {
   background: var(--bg);
   font-family: 'Open Sans', sans-serif;
 }
 
-/* PAGE TAKES FULL HEIGHT */
+/* PAGE */
 
 .page {
-  height: 100vh;
+  min-height: 100dvh; /* ✅ Safari-safe */
   display: flex;
   flex-direction: column;
   padding: 14px;
@@ -37,6 +41,7 @@ body {
   align-items: flex-start;
   margin-bottom: 12px;
   gap: 12px;
+  flex-shrink: 0;
 }
 
 .header-left {
@@ -75,30 +80,36 @@ body {
 }
 
 .logo {
-  width: 160px;
+  width: 140px;
 }
 
-/* SCROLL AREA TAKES REMAINING HEIGHT */
+/* SCROLL AREA */
 
 .scroll-wrap {
   flex: 1;
+  min-height: 0; /* ✅ CRITICAL FIX */
   display: flex;
   gap: 12px;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
-    padding-bottom: 4px;
+  align-items: stretch;
 }
 
-/* PRODUCT FULL HEIGHT */
+/* PRODUCT */
 
 .product {
   flex: 0 0 75%;
   height: 100%;
+  min-height: 0; /* ✅ prevents overflow */
   position: relative;
   scroll-snap-align: start;
   cursor: pointer;
-  padding: 3px; /* 👈 THIS is your safe spacing */
+  padding: 3px; /* ✅ spacing without breaking layout */
 }
+
+/* IMAGE */
+
 .product-image {
   width: 100%;
   height: 100%;
@@ -106,7 +117,8 @@ body {
   border: 6px solid white;
   display: block;
 }
-/* TITLE ON IMAGE */
+
+/* TITLE */
 
 .product-title {
   position: absolute;
