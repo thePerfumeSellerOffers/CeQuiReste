@@ -46,21 +46,27 @@
       padding: 40px;
     }
 
-.disabled-button {
-  display: inline-block;
-  padding: 14px 20px;
-  border-radius: 10px;
-  border: 2px solid #000; /* slightly stronger */
-  font-size: 14px;
-  font-weight: 600; /* bolder */
-  text-transform: uppercase; /* ALL CAPS */
-  letter-spacing: 1px; /* gives it that “label/button” feel */
-  color: #000;
-  background: transparent;
-  opacity: 0.6;
-  cursor: not-allowed;
-  user-select: none;
-}
+    /* ACTIVE BUTTON */
+
+    .main-button {
+      display: inline-block;
+      padding: 14px 20px;
+      border-radius: 10px;
+      border: 2px solid #000;
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #000;
+      background: transparent;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .main-button:active {
+      transform: scale(0.97);
+      background: rgba(0,0,0,0.05);
+    }
   </style>
 </head>
 
@@ -137,9 +143,10 @@ but it is not
 it circulates
     </div>
 
-    <div class="disabled-button">
-      Sales start on April 10th
-    </div>
+    <!-- BUTTON TO SHOP PAGE -->
+    <a href="shop.html" class="main-button">
+      Order Now
+    </a>
 
   </main>
 </body>
