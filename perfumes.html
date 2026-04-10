@@ -20,26 +20,14 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/* PAGE */
-
 .page {
   padding: 14px;
-  max-width: 420px;   /* 👈 fixed column width */
-  margin: 0 auto;     /* 👈 centered */
+  max-width: 420px;
+  margin: 0 auto;
 }
-
-/* HEADER */
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
   margin-bottom: 20px;
-  gap: 12px;
-}
-
-.header-left {
-  max-width: 60%;
 }
 
 .intro-title {
@@ -50,14 +38,48 @@ body {
   letter-spacing: 0.1em;
 }
 
+.product-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.product {
+  position: relative;
+  cursor: pointer;
+}
+
+.product-image {
+  width: 60%;
+  height: auto;
+  display: block;
+  border: 6px solid white;
+}
+
+.product-title {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  right: 40%;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  text-shadow: 0 0 6px rgba(0,0,0,0.6);
+}
+
+.footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.15);
+}
+
 .intro-text {
-  margin: 0;
+  margin: 0 0 10px;
   font-size: 12px;
   line-height: 1.5;
 }
 
 .contact-buttons {
-  margin-top: 10px;
   display: flex;
   gap: 6px;
 }
@@ -72,49 +94,6 @@ body {
   border: 1px solid #000;
   padding: 3px 6px;
 }
-
-.logo {
-  width: 160px;
-}
-
-/* PRODUCT LIST */
-
-.product-list {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-/* PRODUCT */
-
-.product {
-  position: relative;
-  cursor: pointer;
-}
-
-/* IMAGE */
-
-.product-image {
-  width: 100%;
-  height: auto;
-  display: block;
-  border: 6px solid white;
-}
-
-/* TITLE ON IMAGE */
-
-.product-title {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  right: 12px;
-  color: white;
-  font-size: 15px;
-  font-weight: 700;
-  text-shadow: 0 0 6px rgba(0,0,0,0.6);
-}
-
-/* MODAL */
 
 .modal {
   position: fixed;
@@ -160,11 +139,6 @@ body {
   max-width: 36ch;
 }
 
-.modal-meta-main {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
 .modal-meta-sub {
   font-size: 12px;
   opacity: 0.8;
@@ -176,46 +150,43 @@ body {
 
 <main class="page">
 
-<header class="header">
-  <div class="header-left">
+  <header class="header">
     <h1 class="intro-title">Limited Edition Perfumes</h1>
+  </header>
+
+  <section class="product-list">
+
+    <div class="product" onclick="openModal(0)">
+      <img src="perfume-1.JPG" class="product-image">
+      <div class="product-title">Calcined Bone Dust</div>
+    </div>
+
+    <div class="product" onclick="openModal(1)">
+      <img src="perfume-2.JPG" class="product-image">
+      <div class="product-title">Marrow Residue</div>
+    </div>
+
+    <div class="product" onclick="openModal(2)">
+      <img src="perfume-3.JPG" class="product-image">
+      <div class="product-title">Ossified Oil</div>
+    </div>
+
+    <div class="product" onclick="openModal(3)">
+      <img src="perfume-4.JPG" class="product-image">
+      <div class="product-title">Ash of Structure</div>
+    </div>
+
+  </section>
+
+  <footer class="footer">
     <p class="intro-text">
-      Each perfume is sold with an accompanying image print.<br>
       For acquisition inquiries:
     </p>
-
     <div class="contact-buttons">
       <a href="mailto:hamid.m.shams@gmail.com" class="nav-link">Email</a>
       <a href="https://www.instagram.com/__hamidshams__/" class="nav-link" target="_blank">Instagram</a>
     </div>
-  </div>
-
-  <img src="logo.png" class="logo">
-</header>
-
-<section class="product-list">
-
-  <div class="product" onclick="openModal(0)">
-    <img src="perfume-1.JPG" class="product-image">
-    <div class="product-title">Calcined Bone Dust</div>
-  </div>
-
-  <div class="product" onclick="openModal(1)">
-    <img src="perfume-2.JPG" class="product-image">
-    <div class="product-title">Marrow Residue</div>
-  </div>
-
-  <div class="product" onclick="openModal(2)">
-    <img src="perfume-3.JPG" class="product-image">
-    <div class="product-title">Ossified Oil</div>
-  </div>
-
-  <div class="product" onclick="openModal(3)">
-    <img src="perfume-4.JPG" class="product-image">
-    <div class="product-title">Ash of Structure</div>
-  </div>
-
-</section>
+  </footer>
 
 </main>
 
